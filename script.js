@@ -12,31 +12,32 @@ const resultadoGuionFinal = document.getElementById('resultado-guion-final');
 async function generarContenido() {
     console.log('Botón de ideas presionado.');
     resultadoTitulos.innerHTML = 'Generando ideas... 🧠';
-    resultadoMiniaturas.innerHTML = 'Contactando a la IA...';
-
+    resultadoMiniaturas.innerHTML = 'Contactando a la cocina en Render...';
+    
     const tema = inputTema.value;
     const formato = selectorFormato.value;
 
     try {
-        const url = 'https://script-maker-backend.onrender.com';
-
+        // ¡LA URL COMPLETA Y CORRECTA!
+        const url = 'https://script-maker-backend.onrender.com/generate-ideas';
+        
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ topic: tema, format: formato })
         });
-
+        
         if (!response.ok) throw new Error(`Error del servidor: ${response.status}`);
-
+        
         const data = await response.json();
-
+        
         resultadoTitulos.innerHTML = "— " + data.titulos.join('<br><br>— ');
         resultadoMiniaturas.innerHTML = "— " + data.miniaturas.map(item => item.descripcion).join('<br><br>— ');
-
+        
     } catch (error) {
         console.error('Error generando ideas:', error);
         resultadoTitulos.innerHTML = 'Error al conectar con la IA.';
-        resultadoMiniaturas.innerHTML = 'Asegúrate de que el backend esté activo y refresca la página.';
+        resultadoMiniaturas.innerHTML = 'Asegúrate de que el backend en Render esté activo y refresca la página.';
     }
 }
 
@@ -50,9 +51,9 @@ async function generarGuionFinal() {
     const formato = selectorFormato.value;
 
     try {
-        // LA URL CORRECTA Y VERIFICADA
-        const url = 'https://script-maker-backend.onrender.com';
-
+        // ¡LA URL COMPLETA Y CORRECTA TAMBIÉN AQUÍ!
+        const url = 'https://script-maker-backend.onrender.com/generate-final-script';
+        
         const response = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
@@ -63,9 +64,9 @@ async function generarGuionFinal() {
         });
 
         if (!response.ok) throw new Error(`Error del servidor: ${response.status}`);
-
+        
         const data = await response.json();
-
+        
         const guionHtml = data.guion.replace(/\n/g, '<br>');
         resultadoGuionFinal.innerHTML = guionHtml;
 
