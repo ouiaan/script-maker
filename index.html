@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <!-- Nuestro contenedor principal que centrará todo -->
+  <div class="main-container">
+
+    <!-- Los Títulos -->
+    <h1>Generador de Guiones</h1>
+    <p class="subtitle">by ouiaan</p>
+
+    <!-- El Formulario -->
+    <div class="form-block">
+      <!-- El área de texto para el tema -->
+      <textarea id="input-tema" class="text-area-style" placeholder="Describe aquí el tema de tu video..."></textarea>
+
+      <!-- El menú para seleccionar el formato -->
+      <select id="selector-formato" class="select-style">
+        <option value="YouTube">YouTube</option>
+        <option value="TikTok/IG">TikTok/IG</option>
+      </select>
+
+      <!-- El primer botón para generar ideas -->
+      <button id="boton-ideas" class="button-style">Generar Ideas</button>
+    </div>
+
+    <!-- El contenedor para los resultados -->
+    <div class="results-wrapper">
+      <!-- Los resultados de los títulos -->
+      <p class="subtitle-results">Sugerencias de Títulos</p>
+      <p id="resultado-titulos" class="results-text">...</p>
+
+      <!-- Los resultados de las miniaturas -->
+      <p class="subtitle-results">Ideas para Miniaturas</p>
+      <p id="resultado-miniaturas" class="results-text">...</p>
+
+      <!-- El segundo botón para el guion final -->
+      <button id="boton-guion-final" class="button-style">Generar Guion Final</button>
+
+      <!-- El resultado final del guion -->
+      <p id="resultado-guion-final" class="results-text">...</p>
+    </div>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
