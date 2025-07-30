@@ -18,7 +18,7 @@ async function generarContenido() {
     const formato = selectorFormato.value;
 
     try {
-        const url = 'https://3b173463-f8aa-48dc-b61c-a82fc3bfa177-00-3iolx3s9730xc.worf.replit.dev/generate-ideas';
+        const url = 'https://script-maker-backend.onrender.com';
 
         const response = await fetch(url, {
             method: 'POST',
@@ -51,7 +51,7 @@ async function generarGuionFinal() {
 
     try {
         // LA URL CORRECTA Y VERIFICADA
-        const url = 'https://3b173463-f8aa-48dc-b61c-a82fc3bfa177-00-3iolx3s9730xc.worf.replit.dev/generate-final-script';
+        const url = 'https://script-maker-backend.onrender.com';
 
         const response = await fetch(url, {
             method: 'POST',
